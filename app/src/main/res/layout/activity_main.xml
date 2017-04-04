@@ -33,15 +33,16 @@
         android:id="@+id/editText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="74dp"
         android:editable="false"
         android:ems="10"
         android:inputType="textPersonName"
+        android:textAlignment="center"
         android:textColor="#FFFFFF"
         tools:layout_editor_absoluteX="84dp"
-        tools:layout_editor_absoluteY="118dp"
-        android:layout_below="@+id/textView"
-        android:layout_centerHorizontal="true" />
+        tools:layout_editor_absoluteY="118dp" />
 
     <Button
         android:id="@+id/button"

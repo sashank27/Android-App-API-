@@ -49,6 +49,8 @@ public class DownloadData extends AsyncTask<String,Void,String>{
         try {
             JSONObject jsonObject = new JSONObject(result);
             JSONObject weatherdata = new JSONObject(jsonObject.getString("main"));
+            JSONObject weatherdata1 = new JSONObject(jsonObject.getString("weather"));
+
 
             double temperature = Double.parseDouble(weatherdata.getString("temp"));
             double humidity = Double.parseDouble(weatherdata.getString("humidity"));
@@ -56,22 +58,23 @@ public class DownloadData extends AsyncTask<String,Void,String>{
             double min_temp = Double.parseDouble(weatherdata.getString("temp_min"));
             double max_temp = Double.parseDouble(weatherdata.getString("temp_max"));
 
+            double description = Double.parseDouble(weatherdata1.getString("description"));
+
             int tempInteger = (int) (temperature - 273.15);
 
-            String placeName = jsonObject.getString("name");
-
-            Activity2.city.setText(String.valueOf(placeName));
             Activity2.temp.setText(String.valueOf(tempInteger) + " ̊C");
             Activity2.humi.setText(String.valueOf(humidity) + " %");
             Activity2.pre.setText(String.valueOf(pressure) + " Pa");
             Activity2.mintemp.setText(String.valueOf(min_temp) + " ̊C");
             Activity2.maxtemp.setText(String.valueOf(max_temp) + " ̊C");
+            Activity2.des.setText(String.valueOf(description));
 
 
         }
         catch (Exception e) {
             e.printStackTrace();
         }
+
 
 
     }

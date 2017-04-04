@@ -13,6 +13,7 @@ public class Activity2 extends AppCompatActivity {
     static TextView pre;
     static TextView mintemp;
     static TextView maxtemp;
+    static TextView des;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +32,9 @@ public class Activity2 extends AppCompatActivity {
         pre = (TextView) findViewById(R.id.pressure);
         mintemp = (TextView) findViewById(R.id.mintemp);
         maxtemp = (TextView) findViewById(R.id.maxtemp);
+        des = (TextView) findViewById(R.id.des);
+
+        city.setText(cityName);
 
     }
 
